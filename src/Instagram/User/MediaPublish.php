@@ -34,9 +34,9 @@ use Instagram\Request\Params;
  *     - Endpoint Format: POST /{ig-user-id}/media_publish?creation_id={creation_id}&access_token={access-token}
  *     - Facebook docs: https://developers.facebook.com/docs/instagram-api/reference/ig-user/media_publish
  * 
- * @package     instagram-graph-api
+ * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
- * @link        https://github.com/jstolpe/instagram-graph-api
+ * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */

@@ -21,40 +21,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\Container;
+namespace Instagram\FacebookLogin;
 
 // other classes we need to use
 use Instagram\Instagram;
+use Instagram\Request\Request;
 use Instagram\Request\Params;
-use Instagram\Request\Fields;
+use Instagram\Request\ResponseTypes;
 
 /**
- * Container
+ * FacebookLogin
  *
- * Get info on a container.
- *     - Endpoint Format: GET /{ig-container-id}/?fields={fields}&access_token={access-token}
- *     - Facebook docs: https://developers.facebook.com/docs/instagram-api/reference/ig-container
- * 
+ * Core functionality for login dialog.
+ *     - Facebook Docs: https://developers.facebook.com/docs/facebook-login/guides/advanced/manual-flow/
+ *
  * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
  * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */
-class Container extends Instagram {
+class FacebookLogin extends Instagram {
     /**
-     * @var integer $containerId Instagram container id for publishing media.
+     * @const debug token endpoint
      */
-    protected $containerId;
+    const ENDPOINT = 'dialog/oauth';
 
-     /**
-     * @var array $fields a list of all the fields we are requesting to get back.
+    /**
+     * @var integer $appId Facebook application id.
      */
-    protected $fields = array(
-        Fields::ID,
-        Fields::STATUS,
-        Fields::STATUS_CODE
-    );
+    protected $appId;
+
+    /**
+     * @var integer $appId Facebook application secret.
+     */
+    protected $appSecret;
 
     /**
      * Contructor for instantiating a new object.
@@ -62,32 +63,37 @@ class Container extends Instagram {
      * @param array $config for the class.
      * @return void
      */
-    public function __construct( $config ) {
+    public function __construct( $config = array() ) {
         // call parent for setup
         parent::__construct( $config );
-        
-        // store the user id
-        $this->containerId = $config['container_id'];
+
+        // set the application id
+        $this->appId = $config['app_id'];
+
+        // set the application secret
+        $this->appSecret = $config['app_secret'];
     }
 
     /**
-     * Get the status of a container.
+     * Get the url for a user to prompt them with the login dialog.
      *
-     * @param array $params params for the GET request.
+     * @param string $redirectUri uri the user gets sent to after logging in with facebook.
+     * @param array $permissions array of the permissions you want to request from the user.
+     * @param string $state this gets passed back from facebook in the redirect uri.
      * @return Instagram response.
      */
-    public function getSelf( $params = array() ) {
-        $getParams = array( // parameters for our endpoint
-            'endpoint' => '/' . $this->containerId,
-            'params' => $params ? $params : Params::getFieldsParam( $this->fields )
+    public function getLoginDialogUrl( $redirectUri, $permissions, $state = '' ) {
+        $params = array( // params required to generate the login url
+            Params::CLIENT_ID => $this->appId,
+            Params::REDIRECT_URI => $redirectUri,
+            Params::STATE => $state,
+            Params::SCOPE => Params::commaImplodeArray( $permissions ),
+            Params::RESPONSE_TYPE => ResponseTypes::CODE,
         );
 
-        // ig get request
-        $response = $this->get( $getParams );
-
-        // return response
-        return $response;
-    }
+        // return the login dialog url
+        return Request::BASE_AUTHORIZATION_URL . '/' . $this->graphVersion . '/' . self::ENDPOINT . '?' . http_build_query( $params );;
+    }    
 }
 
 ?>

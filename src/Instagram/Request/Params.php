@@ -28,9 +28,9 @@ namespace Instagram\Request;
  *
  * Functionality and defines for the Instagram Graph API query parameters.
  *
- * @package     instagram-graph-api
+ * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
- * @link        https://github.com/jstolpe/instagram-graph-api
+ * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */
@@ -39,12 +39,18 @@ class Params {
     const AFTER = 'after';
     const CAPTION = 'caption';
     const CHILDREN = 'children';
+    const CLIENT_ID = 'client_id';
+    const CLIENT_SECRET = 'client_secret';
+    const CODE = 'code';
     const COMMENT_ENABLED = 'comment_enabled';
     const COMMENT_ID = 'comment_id';
     const CREATION_ID = 'creation_id';
+    const FB_EXCHANGE_TOKEN = 'fb_exchange_token';
     const FIELDS = 'fields';
+    const GRANT_TYPE = 'grant_type';
     const HIDE = 'hide';
     const IMAGE_URL = 'image_url';
+    const INPUT_TOKEN = 'input_token';
     const IS_CAROUSEL_ITEM = 'is_carousel_item';
     const LIMIT = 'limit';
     const LOCATION_ID = 'location_id';
@@ -57,7 +63,11 @@ class Params {
     const PREV = 'prev';
     const PREVIOUS = 'previous';
     const Q = 'q';
+    const REDIRECT_URI = 'redirect_uri';
+    const RESPONSE_TYPE = 'response_type';
+    const SCOPE = 'scope';
     const SINCE = 'since';
+    const STATE = 'state';
     const THUMB_OFFSET = 'thumb_offset';
     const UNTIL = 'until';
     const USER_ID = 'user_id';

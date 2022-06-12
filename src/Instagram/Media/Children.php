@@ -35,9 +35,9 @@ use Instagram\Request\Fields;
  *     - Endpoint Format: GET /{ig-media-id}/children?access_token={access-token}
  *     - Facebook docs: https://developers.facebook.com/docs/instagram-api/reference/ig-media/children
  * 
- * @package     instagram-graph-api
+ * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
- * @link        https://github.com/jstolpe/instagram-graph-api
+ * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */

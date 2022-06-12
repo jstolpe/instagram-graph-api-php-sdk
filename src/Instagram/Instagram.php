@@ -34,9 +34,9 @@ use Instagram\Request\Fields;
  *
  * Core functionality for talking to the Instagram Graph API.
  *
- * @package     instagram-graph-api
+ * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
- * @link        https://github.com/jstolpe/instagram-graph-api
+ * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */
@@ -44,7 +44,7 @@ class Instagram {
     /**
      * @const string Default Graph API version for requests.
      */
-    const DEFAULT_GRAPH_VERSION = 'v12.0';
+    const DEFAULT_GRAPH_VERSION = 'v14.0';
 
     /**
      * @var string $graphVersion the graph version we want to use.
@@ -84,7 +84,7 @@ class Instagram {
      */
     public function __construct( $config ) {
         // set our access token
-        $this->accessToken = $config['access_token'];
+        $this->setAccessToken( isset( $config['access_token'] ) ? $config['access_token'] : '' );
 
         // instantiate the client
         $this->client = new Curl();
@@ -210,6 +210,16 @@ class Instagram {
         // set paging next/previous links
         $this->pagingNextLink = $response['paging_next_link'] = isset( $response[Fields::PAGING][Params::NEXT] ) ? $response[Fields::PAGING][Params::NEXT] : '';
         $this->pagingPreviousLink = $response['paging_previous_link'] = isset( $response[Fields::PAGING][Params::PREVIOUS] ) ? $response[Fields::PAGING][Params::PREVIOUS] : '';
+    }
+
+    /**
+     * Set the access token.
+     *
+     * @param string $accessToken set the access token.
+     * @return void.
+     */
+    public function setAccessToken( $accessToken ) {
+        $this->accessToken = $accessToken;
     }
 }
 

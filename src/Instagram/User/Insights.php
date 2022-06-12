@@ -36,9 +36,9 @@ use Instagram\Request\Period;
  *     - Endpoint Format: GET /{ig-user-id}/insights?metric={metric}&period={period}&since={since}&until={until}&access_token={access-token}
  *     - Facebook docs: https://developers.facebook.com/docs/instagram-api/reference/ig-user/insights
  * 
- * @package     instagram-graph-api
+ * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
- * @link        https://github.com/jstolpe/instagram-graph-api
+ * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */

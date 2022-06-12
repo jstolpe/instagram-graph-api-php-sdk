@@ -28,9 +28,9 @@ namespace Instagram\Request;
  *
  * Responsible for setting up the request to the API.
  * 
- * @package     instagram-graph-api
+ * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
- * @link        https://github.com/jstolpe/instagram-graph-api
+ * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */
@@ -39,6 +39,11 @@ class Request {
      * @const string production Graph API URL.
      */
     const BASE_GRAPH_URL = 'https://graph.facebook.com';
+
+    /**
+     * @const string production Graph API URL.
+     */
+    const BASE_AUTHORIZATION_URL = 'https://www.facebook.com';
 
     /**
      * @const string METHOD_GET HTTP GET method.
@@ -145,8 +150,9 @@ class Request {
      * @return array
      */
     public function getParams() {
-       // append access token to params
-        $this->params['access_token'] = $this->accessToken;
+        if ( $this->accessToken ) { // append access token to params
+            $this->params['access_token'] = $this->accessToken;
+        }
 
         // return params array
         return $this->params;

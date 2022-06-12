@@ -28,9 +28,9 @@ namespace Instagram\Request;
  *
  * Functionality and defines for the Instagram Graph API metric query parameter.
  *
- * @package     instagram-graph-api
+ * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
- * @link        https://github.com/jstolpe/instagram-graph-api
+ * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */

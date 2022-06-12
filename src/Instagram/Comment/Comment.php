@@ -37,9 +37,9 @@ use Instagram\Request\Fields;
  *     - Endpoint Format: DELETE /{ig-comment-id}?access_token={access-token}
  *     - Facebook docs: https://developers.facebook.com/docs/instagram-api/reference/ig-comment
  * 
- * @package     instagram-graph-api
+ * @package     instagram-graph-api-php-sdk
  * @author      Justin Stolpe
- * @link        https://github.com/jstolpe/instagram-graph-api
+ * @link        https://github.com/jstolpe/instagram-graph-api-php-sdk
  * @license     https://opensource.org/licenses/MIT
  * @version     1.0
  */
