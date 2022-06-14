@@ -37,6 +37,7 @@ namespace Instagram\Request;
 class Params {
     const ACCESS_TOKEN = 'access_token';
     const AFTER = 'after';
+    const BEFORE = 'before';
     const CAPTION = 'caption';
     const CHILDREN = 'children';
     const CLIENT_ID = 'client_id';
