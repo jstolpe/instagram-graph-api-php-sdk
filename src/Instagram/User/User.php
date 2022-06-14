@@ -43,6 +43,11 @@ use Instagram\Request\Fields;
  */
 class User extends Instagram {
     /**
+     * @const Instagram endpoint for the request.
+     */
+    const ENDPOINT = 'me/accounts';
+
+    /**
      * @var string $userId Instagram user id.
      */
     protected $userId;
@@ -91,6 +96,34 @@ class User extends Instagram {
 
         // ig get request
         $response = $this->get( $getParams );
+
+        // return response
+        return $response;
+    }
+
+    /**
+     * Get the users facebook pages.
+     *
+     * @param array $params params for the GET request.
+     * @return Instagram response.
+     */
+    public function getUserPages( $params = array() ) {
+        $getParams = array( // parameters for our endpoint
+            'endpoint' => '/' . self::ENDPOINT,
+            'params' => $params
+        );
+
+        // ig get request
+        $response = $this->get( $getParams );
+
+        // calculate the next link for paging
+        $this->calcLinkFromCursor( Params::AFTER, $response, $getParams['endpoint'], $params );
+
+        // calcuate the before link
+        $this->calcLinkFromCursor( Params::BEFORE, $response, $getParams['endpoint'], $params );
+
+        // set prev and next links
+        $this->setPrevNextLinks( $response );
 
         // return response
         return $response;

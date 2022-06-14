@@ -221,6 +221,30 @@ class Instagram {
     public function setAccessToken( $accessToken ) {
         $this->accessToken = $accessToken;
     }
+
+    /**
+     * Calculate next link based on the cursors.
+     *
+     * @param string $type type of link after or before.
+     * @param array $response Instagram api response.
+     * @param array $params specific request params.
+     * @return void
+     */
+    public function calcLinkFromCursor( $type, &$response, $endpoint, $params ) {
+        if ( isset( $response[Fields::PAGING][Fields::CURSORS][$type] ) ) { // we have paging
+            // set the after cursor
+            $params[$type] = $response[Fields::PAGING][Fields::CURSORS][$type];
+
+            // create our request
+            $request = new Request( Request::METHOD_GET, $endpoint, $params, $this->graphVersion, $this->accessToken );
+
+            // set paging type based
+            $pagingOrder = Params::AFTER == $type ? Params::NEXT : Params::PREVIOUS;
+
+            // set paging next to the url for the next request
+            $response[Fields::PAGING][$pagingOrder] = $request->getUrl();
+        }
+    }
 }
 
 ?>
