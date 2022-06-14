@@ -79,7 +79,7 @@ class User extends Instagram {
         parent::__construct( $config );
         
         // store the user id
-        $this->userId = $config['user_id'];
+        $this->userId = isset( $config['user_id'] ) ? $config['user_id'] : '';
     }
 
     /**

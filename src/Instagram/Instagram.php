@@ -227,6 +227,7 @@ class Instagram {
      *
      * @param string $type type of link after or before.
      * @param array $response Instagram api response.
+     * @param string $endpoint endpoint for the request.
      * @param array $params specific request params.
      * @return void
      */
