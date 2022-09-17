@@ -128,33 +128,67 @@ class BusinessDiscovery extends User {
      * @return void
      */
     public function calcNextLink( &$response ) {
-        if ( isset( $response[Fields::BUSINESS_DISCOVERY][Fields::MEDIA][Fields::PAGING][Fields::CURSORS][Params::AFTER] ) ) { // we have another page
-            $config = array( // setup config
-                'user_id' => $response[Fields::BUSINESS_DISCOVERY][Fields::ID],
-                'access_token' => $this->accessToken
-            );
+        if ( isset( $response[Fields::BUSINESS_DISCOVERY][Fields::MEDIA][Fields::PAGING][Fields::CURSORS][Params::BEFORE] ) ) { // we have previous page
+            // get fields string
+            $fieldsString = $this->getParams();
 
-            // create new media
-            $media = new Media( $config );
-
-            // use params from media class
-            $params = $media->getParams();
-
-            // need the access token
-            $params['access_token'] = $this->accessToken;
-
-            // set the after cursor
-            $params[Params::AFTER] = $response[Fields::BUSINESS_DISCOVERY][Fields::MEDIA][Fields::PAGING][Fields::CURSORS][Params::AFTER];
+            // calculate after string with cursor
+            $snippet = Fields::MEDIA . '.' . Params::BEFORE . '(' . $response[Fields::BUSINESS_DISCOVERY][Fields::MEDIA][Fields::PAGING][Fields::CURSORS][Params::BEFORE] . '){';
+            
+            // update old fields with cursor
+            $newFieldsParams = str_replace( Fields::MEDIA . '{', $snippet, $fieldsString );
 
             // create our media endpoint
-            $endpoint = '/' . $media->userId . '/' . Media::ENDPOINT;
+            $endpoint = '/' . $this->userId . '/';
 
             // create our request
-            $request = new Request( Request::METHOD_GET, $endpoint, $params, $this->graphVersion, $this->accessToken );
+            $request = new Request( Request::METHOD_GET, $endpoint, $newFieldsParams, $this->graphVersion, $this->accessToken );
+
+            // set paging next to the url for the next request
+            $response[Fields::PAGING][Params::PREVIOUS] = $request->getUrl();
+        }
+
+        if ( isset( $response[Fields::BUSINESS_DISCOVERY][Fields::MEDIA][Fields::PAGING][Fields::CURSORS][Params::AFTER] ) ) { // we have another page
+            // get fields string
+            $fieldsString = $this->getParams();
+
+            // calculate after string with cursor
+            $snippet = Fields::MEDIA . '.' . Params::AFTER . '(' . $response[Fields::BUSINESS_DISCOVERY][Fields::MEDIA][Fields::PAGING][Fields::CURSORS][Params::AFTER] . '){';
+            
+            // update old fields with cursor
+            $newFieldsParams = str_replace( Fields::MEDIA . '{', $snippet, $fieldsString );
+
+            // create our media endpoint
+            $endpoint = '/' . $this->userId . '/';
+
+            // create our request
+            $request = new Request( Request::METHOD_GET, $endpoint, $newFieldsParams, $this->graphVersion, $this->accessToken );
 
             // set paging next to the url for the next request
             $response[Fields::PAGING][Params::NEXT] = $request->getUrl();
         }
+    }
+
+    /**
+     * Request previous or next page data.
+     *
+     * @param string $page specific page to request.
+     * @return array of previous or next page data..
+     */
+    public function getMediaPage( $page ) {
+        // get the page to use
+        $pageUrl = Params::NEXT == $page ? $this->pagingNextLink : $this->pagingPreviousLink;
+
+        // return the response from the request
+        $mediaPageRequest = $this->sendCustomRequest( $pageUrl );
+
+        // calculate the next link for paging
+        $this->calcNextLink( $mediaPageRequest );
+
+        // set prev and next links
+        $this->setPrevNextLinks( $mediaPageRequest );
+
+        return $mediaPageRequest;
     }
 
     /**
