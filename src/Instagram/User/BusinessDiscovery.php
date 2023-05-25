@@ -79,7 +79,8 @@ class BusinessDiscovery extends User {
         Fields::MEDIA_TYPE,
         Fields::OWNER,
         Fields::PERMALINK,
-        Fields::MEDIA_URL
+        Fields::MEDIA_URL,
+        Fields::THUMBNAIL_URL
     );
 
     /**
