@@ -78,10 +78,12 @@ class Media extends User {
             'params' => $params ? $params : array()
         );
 
-        if ( isset( $params[Params::VIDEO_URL] ) && !isset( $postParams['params'][Params::MEDIA_TYPE] ) ) { // video container requires more params and to not overide  in case REELS is passed
-            $postParams['params'][Params::MEDIA_TYPE] = MediaTypes::VIDEO;    
-        } elseif ( isset( $params[Params::CHILDREN] ) ) { // carousel container requires more params
+        if ( isset( $params[Params::CHILDREN] ) ) { // carousel container requires more children params
             $postParams['params'][Params::MEDIA_TYPE] = MediaTypes::CAROUSEL;
+        } elseif ( isset( $params[Params::VIDEO_URL] ) && !isset( $postParams['params'][Params::MEDIA_TYPE] ) ) { // video container requires more params and to not overide in case REELS is passed
+            $postParams['params'][Params::MEDIA_TYPE] = MediaTypes::VIDEO; 
+        } elseif ( isset( $params[Params::VIDEO_URL] && isset( $postParams['params'][Params::MEDIA_TYPE] ) { // set url and type to whatever is passed in
+             $postParams['params'][Params::MEDIA_TYPE] = $postParams['params'][Params::MEDIA_TYPE]; 
         }
 
         // ig get request
