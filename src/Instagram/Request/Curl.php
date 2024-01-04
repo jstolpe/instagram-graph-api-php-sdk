@@ -69,6 +69,18 @@ class Curl {
             CURLOPT_CAINFO => __DIR__ . '/certs/cacert.pem',
         );
 
+        // remove not allowed params
+        $proxy = array_intersect_key(
+            $request->getProxy(),
+            array_flip([
+                CURLOPT_PROXY,
+                CURLOPT_PROXYUSERPWD,
+                CURLOPT_PROXYTYPE,
+            ])
+        );
+
+        $options += $proxy;
+
         if ( $request->getMethod() == Request::METHOD_POST ) { // need to add on post fields
             $options[CURLOPT_POSTFIELDS] = $request->getUrlBody();
         }
