@@ -86,6 +86,11 @@ class Request {
     protected $url;
 
     /**
+     * @var array
+     */
+    protected $proxy;
+
+    /**
      * Contructor for instantiating a request..
      *
      * @param string $method the method type for the request.
@@ -93,9 +98,10 @@ class Request {
      * @param array  $params the parameters to be sent along with the request.
      * @param string $graphVersion the graph version for the request.
      * @param string $accessToken the access token to go along with the request.
+     * @param array $proxy curl proxy params.
      * @return void
      */
-    public function __construct( $method, $endpoint = '', $params = array(), $graphVersion = '', $accessToken = '' ) {
+    public function __construct( $method, $endpoint = '', $params = array(), $graphVersion = '', $accessToken = '', $proxy = [] ) {
         // set HTTP method
         $this->method = strtoupper( $method );
 
@@ -110,6 +116,18 @@ class Request {
 
         // set url
         $this->setUrl( $graphVersion );
+
+        $this->setProxy($proxy);
+    }
+
+    public function setProxy(array $proxy)
+    {
+        $this->proxy = $proxy;
+    }
+
+    public function getProxy()
+    {
+        return $this->proxy;
     }
 
     /**

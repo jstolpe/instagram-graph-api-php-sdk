@@ -67,6 +67,11 @@ class Instagram {
     protected $request = '';
 
     /**
+     * @var array
+     */
+    protected $proxy;
+
+    /**
      * @var string $pagingNextLink Instagram next page link.
      */
     public $pagingNextLink = '';
@@ -91,6 +96,8 @@ class Instagram {
 
         // set graph version
         $this->graphVersion = isset( $config['graph_version'] ) ? $config['graph_version'] : self::DEFAULT_GRAPH_VERSION;
+
+        $this->proxy = isset($config['proxy']) ? (array) $config['proxy'] : [];
     }
 
     /**
@@ -145,7 +152,7 @@ class Instagram {
      */
     public function sendRequest( $method, $endpoint, $params ) {
         // create our request
-        $this->request = new Request( $method, $endpoint, $params, $this->graphVersion, $this->accessToken );
+        $this->request = new Request( $method, $endpoint, $params, $this->graphVersion, $this->accessToken, $this->proxy);
 
         // send the request to the client for processing
         $response = $this->client->send( $this->request );
