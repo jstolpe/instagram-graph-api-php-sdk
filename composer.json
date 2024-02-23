@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Instagram\\": "src/Instagram/"
+            "Jstolpe\\InstagramGraphApiPhpSdk\\": "src/Instagram/"
         }
     }
 }

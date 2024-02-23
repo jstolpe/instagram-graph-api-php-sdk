@@ -21,13 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\FacebookLogin;
+namespace Jstolpe\InstagramGraphApiPhpSdk\FacebookLogin;
 
 // other classes we need to use
-use Instagram\Instagram;
-use Instagram\Request\Request;
-use Instagram\Request\Params;
-use Instagram\Request\ResponseTypes;
+use Jstolpe\InstagramGraphApiPhpSdk\Instagram;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Request;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Params;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\ResponseTypes;
 
 /**
  * FacebookLogin

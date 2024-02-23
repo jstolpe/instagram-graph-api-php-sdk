@@ -21,12 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\AccessToken;
+namespace Jstolpe\InstagramGraphApiPhpSdk\AccessToken;
 
 // other classes we need to use
-use Instagram\Instagram;
-use Instagram\Request\Params;
-use Instagram\Request\GrantTypes;
+use Jstolpe\InstagramGraphApiPhpSdk\Instagram;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Params;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\GrantTypes;
 
 /**
  * AccessToken

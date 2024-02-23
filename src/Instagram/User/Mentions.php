@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\User;
+namespace Jstolpe\InstagramGraphApiPhpSdk\User;
 
 // other classes we need to use
-use Instagram\Instagram;
+use Jstolpe\InstagramGraphApiPhpSdk\Instagram;
 
 /**
  * Mentions
