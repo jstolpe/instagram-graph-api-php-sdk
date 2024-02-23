@@ -21,13 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram;
+namespace Jstolpe\InstagramGraphApiPhpSdk;
 
 // other classes to use
-use Instagram\Request\Request;
-use Instagram\Request\Curl;
-use Instagram\Request\Params;
-use Instagram\Request\Fields;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Request;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Curl;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Params;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Fields;
 
 /**
  * Instagram
