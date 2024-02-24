@@ -40,5 +40,3 @@ class MediaTypes {
     const REELS = 'REELS';
     const STORIES = 'STORIES';
 }
-
-?>

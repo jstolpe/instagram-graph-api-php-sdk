@@ -87,5 +87,3 @@ class Page Extends Instagram {
         return $response;
     }
 }
-
-?>

@@ -95,5 +95,3 @@ class Mentions extends User {
         return $response;
     }
 }
-
-?>

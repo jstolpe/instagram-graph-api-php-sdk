@@ -129,5 +129,3 @@ class User extends Instagram {
         return $response;
     }
 }
-
-?>

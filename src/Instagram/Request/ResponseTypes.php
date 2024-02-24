@@ -37,5 +37,3 @@ namespace Jstolpe\InstagramGraphApiPhpSdk\Request;
 class ResponseTypes {
     const CODE = 'code';
 }
-
-?>

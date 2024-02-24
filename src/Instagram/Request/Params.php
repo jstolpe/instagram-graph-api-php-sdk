@@ -99,5 +99,3 @@ class Params {
         return implode( ',', $array );
     }
 }
-
-?>

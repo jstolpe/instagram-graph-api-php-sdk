@@ -110,5 +110,3 @@ class TopMedia extends Hashtag {
         }
     }
 }
-
-?>

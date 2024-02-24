@@ -89,5 +89,3 @@ class Container extends Instagram {
         return $response;
     }
 }
-
-?>

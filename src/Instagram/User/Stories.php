@@ -74,5 +74,3 @@ class Stories extends User {
         return $response;
     }
 }
-
-?>

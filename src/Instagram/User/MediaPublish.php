@@ -78,5 +78,3 @@ class MediaPublish extends User {
         return $response;
     }
 }
-
-?>

@@ -77,5 +77,3 @@ class LiveMedia extends User {
         return $response;
     }
 }
-
-?>

@@ -87,5 +87,3 @@ class Curl {
         return json_decode( $this->rawResponse, true );
     }
 }
-
-?>

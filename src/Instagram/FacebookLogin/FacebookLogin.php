@@ -80,7 +80,7 @@ class FacebookLogin extends Instagram {
      * @param string $redirectUri uri the user gets sent to after logging in with facebook.
      * @param array $permissions array of the permissions you want to request from the user.
      * @param string $state this gets passed back from facebook in the redirect uri.
-     * @return Instagram response.
+     * @return string Instagram response.
      */
     public function getLoginDialogUrl( $redirectUri, $permissions, $state = '' ) {
         $params = array( // params required to generate the login url
@@ -92,8 +92,6 @@ class FacebookLogin extends Instagram {
         );
 
         // return the login dialog url
-        return Request::BASE_AUTHORIZATION_URL . '/' . $this->graphVersion . '/' . self::ENDPOINT . '?' . http_build_query( $params );;
+        return Request::BASE_AUTHORIZATION_URL . '/' . $this->graphVersion . '/' . self::ENDPOINT . '?' . http_build_query( $params );
     }    
 }
-
-?>

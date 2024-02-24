@@ -189,5 +189,3 @@ class Fields {
         ;
 	}
 }
-
-?>

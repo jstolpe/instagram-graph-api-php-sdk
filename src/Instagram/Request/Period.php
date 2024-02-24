@@ -40,5 +40,3 @@ class Period {
     const WEEK = 'week';
     const DAYS_28 = 'days_28';
 }
-
-?>

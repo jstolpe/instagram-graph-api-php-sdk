@@ -115,5 +115,3 @@ class Tags extends User {
         }
     }
 }
-
-?>
