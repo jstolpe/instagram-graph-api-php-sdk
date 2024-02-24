@@ -66,5 +66,3 @@ class Metric {
     const VIDEO_VIEWS = 'video_views';
     const WEBSITE_CLICKS = 'website_clicks';
 }
-
-?>

@@ -110,5 +110,3 @@ class RecentMedia extends Hashtag {
         }
     }
 }
-
-?>

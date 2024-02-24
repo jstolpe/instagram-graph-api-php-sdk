@@ -99,5 +99,3 @@ class RecentlySearchedHashtags extends User {
         }
     }    
 }
-
-?>

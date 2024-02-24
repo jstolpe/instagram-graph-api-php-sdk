@@ -77,5 +77,3 @@ class Children extends Media {
         return $response;
     }
 }
-
-?>

@@ -142,5 +142,3 @@ class Comment extends Instagram {
         return $response;
     }
 }
-
-?>

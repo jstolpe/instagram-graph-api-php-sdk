@@ -136,5 +136,3 @@ class Insights extends Media {
         }
     } 
 }
-
-?>

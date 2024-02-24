@@ -37,5 +37,3 @@ namespace Jstolpe\InstagramGraphApiPhpSdk\Request;
 class GrantTypes {
     const FB_EXCHANGE_TOKEN = 'fb_exchange_token';
 }
-
-?>

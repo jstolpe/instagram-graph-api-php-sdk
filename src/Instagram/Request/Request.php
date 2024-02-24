@@ -191,5 +191,3 @@ class Request {
         return $this->url;
     }
 }
-
-?>

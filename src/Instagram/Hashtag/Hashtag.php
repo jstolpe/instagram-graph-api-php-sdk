@@ -88,5 +88,3 @@ class Hashtag extends Instagram {
         return $response;
     }
 }
-
-?>

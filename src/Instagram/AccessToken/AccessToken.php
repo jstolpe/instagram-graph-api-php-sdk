@@ -248,5 +248,3 @@ class AccessToken extends Instagram {
         }
     }
 }
-
-?>

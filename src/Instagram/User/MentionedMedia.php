@@ -100,5 +100,3 @@ class MentionedMedia extends User {
         }
     }
 }
-
-?>

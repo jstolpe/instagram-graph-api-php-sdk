@@ -87,5 +87,3 @@ class HashtagSearch extends Instagram {
         return $response;
     }
 }
-
-?>

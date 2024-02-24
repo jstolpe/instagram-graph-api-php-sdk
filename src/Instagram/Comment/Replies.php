@@ -99,5 +99,3 @@ class Replies extends Comment {
         return $response;
     }
 }
-
-?>

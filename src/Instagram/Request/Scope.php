@@ -44,4 +44,3 @@ class Scope {
     const PAGES_SHOW_LIST = 'pages_show_list';
     const PAGES_READ_ENGAGEMENT = 'pages_read_engagement';
 }
-?>

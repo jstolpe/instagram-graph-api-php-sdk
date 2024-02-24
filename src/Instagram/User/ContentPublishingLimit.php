@@ -106,5 +106,3 @@ class ContentPublishingLimit extends User {
         }
     }
 }
-
-?>

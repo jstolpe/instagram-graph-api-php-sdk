@@ -112,5 +112,3 @@ class Insights extends User {
         }
     }    
 }
-
-?>

@@ -119,5 +119,3 @@ class Media extends Instagram {
         }
     }
 }
-
-?>
