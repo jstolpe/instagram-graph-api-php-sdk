@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\Request;
+namespace Jstolpe\InstagramGraphApiPhpSdk\Request;
 
 /**
  * Scope
@@ -44,4 +44,3 @@ class Scope {
     const PAGES_SHOW_LIST = 'pages_show_list';
     const PAGES_READ_ENGAGEMENT = 'pages_read_engagement';
 }
-?>

@@ -21,11 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\HashtagSearch;
+namespace Jstolpe\InstagramGraphApiPhpSdk\HashtagSearch;
 
 // other classes we need to use
-use Instagram\Instagram;
-use Instagram\Request\Params;
+use Jstolpe\InstagramGraphApiPhpSdk\Instagram;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Params;
 
 /**
  * Hashtag Search.
@@ -87,5 +87,3 @@ class HashtagSearch extends Instagram {
         return $response;
     }
 }
-
-?>

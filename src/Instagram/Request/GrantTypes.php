@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\Request;
+namespace Jstolpe\InstagramGraphApiPhpSdk\Request;
 
 /**
  * GrantTypes
@@ -37,5 +37,3 @@ namespace Instagram\Request;
 class GrantTypes {
     const FB_EXCHANGE_TOKEN = 'fb_exchange_token';
 }
-
-?>

@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  */
 
+//Name space fixed you can delete this.
+
 /**
  * Register the autoloader for the Instagram Graph API PHP SDK classes.
  *

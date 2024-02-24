@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\Request;
+namespace Jstolpe\InstagramGraphApiPhpSdk\Request;
 
 /**
  * Metric
@@ -66,5 +66,3 @@ class Metric {
     const VIDEO_VIEWS = 'video_views';
     const WEBSITE_CLICKS = 'website_clicks';
 }
-
-?>

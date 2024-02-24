@@ -21,12 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\User;
+namespace Jstolpe\InstagramGraphApiPhpSdk\User;
 
 // other classes we need to use
-use Instagram\Instagram;
-use Instagram\Request\Params;
-use Instagram\Request\Fields;
+use Jstolpe\InstagramGraphApiPhpSdk\Instagram;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Params;
+use Jstolpe\InstagramGraphApiPhpSdk\Request\Fields;
 
 /**
  * Live Media
@@ -77,5 +77,3 @@ class LiveMedia extends User {
         return $response;
     }
 }
-
-?>

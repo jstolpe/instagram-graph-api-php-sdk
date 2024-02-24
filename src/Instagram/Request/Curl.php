@@ -21,10 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\Request;
+namespace Jstolpe\InstagramGraphApiPhpSdk\Request;
 
-// other classes we need to use
-use Instagram\Request\Request;
 
 /**
  * Curl
@@ -89,5 +87,3 @@ class Curl {
         return json_decode( $this->rawResponse, true );
     }
 }
-
-?>

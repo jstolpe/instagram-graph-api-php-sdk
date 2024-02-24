@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\Request;
+namespace Jstolpe\InstagramGraphApiPhpSdk\Request;
 
 /**
  * Params
@@ -99,5 +99,3 @@ class Params {
         return implode( ',', $array );
     }
 }
-
-?>

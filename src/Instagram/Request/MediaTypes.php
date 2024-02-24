@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace Instagram\Request;
+namespace Jstolpe\InstagramGraphApiPhpSdk\Request;
 
 /**
  * MediaTypes
@@ -40,5 +40,3 @@ class MediaTypes {
     const REELS = 'REELS';
     const STORIES = 'STORIES';
 }
-
-?>
